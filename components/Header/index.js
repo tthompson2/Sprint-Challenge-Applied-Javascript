@@ -25,10 +25,21 @@ function Header() {
     dateCreator.textContent = 'SMARCH 28, 2019';
 
     const containerOne = document.getElementsByName('.headerContainer');
+   // const newContainer = document.createElement('div');
+   // newContainer.classList.add = ('headercontainer');
+    
+    //containerOne.parentNode.replaceChild(newContainer, containerOne);
 
-    containerOne.appendChild(divCreator);
-    containerOne.appendChild(dateCreator);
-    containerOne.appendChild(h1Creator);
-    containerOne.appendChild(spanCreator);
-
+    console.log(divCreator);
+    console.log(h1Creator);
+    console.log(spanCreator);
+    console.log(dateCreator);
+    //console.log(containerOne);
+  
+    newContainer.appendChild(divCreator);
+    newContainer.appendChild(dateCreator);
+    newContainer.appendChild(h1Creator);
+    newContainer.appendChild(spanCreator);
 }
+
+Header();
