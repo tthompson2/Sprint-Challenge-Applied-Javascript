@@ -24,16 +24,18 @@ function Header() {
     spanCreator.textContent = '98';
     dateCreator.textContent = 'SMARCH 28, 2019';
 
-    const containerOne = document.getElementsByName('.headerContainer');
-   // const newContainer = document.createElement('div');
-   // newContainer.classList.add = ('headercontainer');
+    const containerOne = document.querySelector('.header-container');
+    const newContainer = document.createElement('div');
+    newContainer.classList.add = ('headercontainer');
+
+    containerOne.appendChild(newContainer);
     
     //containerOne.parentNode.replaceChild(newContainer, containerOne);
 
-    console.log(divCreator);
+    /* console.log(divCreator);
     console.log(h1Creator);
     console.log(spanCreator);
-    console.log(dateCreator);
+    console.log(dateCreator); */
     //console.log(containerOne);
   
     newContainer.appendChild(divCreator);
