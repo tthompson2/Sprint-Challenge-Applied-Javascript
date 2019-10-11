@@ -15,6 +15,16 @@ axios
 
     .then(response => {
 
+        console.log(response);
+
+        response.data.topics.forEach(element => {
+
+            let tempTextContent = document.createElement('p');
+            tempTextContent.textContent = element;
+            topicsSelector.appendChild(tempTextContent);
+            
+        });
+
     })
 
     .catch(error => {
@@ -24,4 +34,3 @@ axios
     const tabCreator = document.createElement('div');
 
     tabCreator.classList.add('tab');
-}
