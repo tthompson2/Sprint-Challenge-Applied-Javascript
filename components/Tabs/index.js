@@ -18,6 +18,7 @@ axios
         response.data.topics.forEach(element => {
 
             let tempTextContent = document.createElement('p');
+            tempTextContent.classList.add('tab');
             tempTextContent.textContent = element;
             topicsSelector.appendChild(tempTextContent);
             

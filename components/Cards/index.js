@@ -33,7 +33,7 @@ const createCard = document.createElement('div');
 axios
      .get('https://lambda-times-backend.herokuapp.com/articles')
 
-     .then(Response => {
+     .then(response => {
          //console.log(Response);
          /*console.log(Response.data.articles.bootstrap);
          console.log(Response.data.articles.javascript);
@@ -41,9 +41,9 @@ axios
          console.log(Response.data.articles.technology);
          console.log(Response.data.articles.jquery);*/
 
-         createHeadline.textContent = Response.data.articles.bootstrap.headline;
-         newSpan.textContent = Response.data.articles.bootstrap.authorName;
-         createImg.src = Response.data.articles.bootstrap.authorPhoto;
+         createHeadline.textContent = response.data.articles.bootstrap.headline;
+         newSpan.textContent = response.data.articles.bootstrap.authorName;
+         createImg.src = response.data.articles.bootstrap.authorPhoto;
          
          createCard.appendChild(createHeadline);
          createCard.appendChild(createAuthor);
