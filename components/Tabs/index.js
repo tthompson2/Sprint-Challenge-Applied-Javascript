@@ -15,8 +15,6 @@ axios
 
     .then(response => {
 
-        console.log(response);
-
         response.data.topics.forEach(element => {
 
             let tempTextContent = document.createElement('p');

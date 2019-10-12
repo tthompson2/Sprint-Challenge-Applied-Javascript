@@ -17,3 +17,42 @@
 // </div>
 //
 // Create a card for each of the articles and add the card to the DOM.
+
+const createCard = document.createElement('div');
+     const createHeadline = document.createElement('div');
+     const createAuthor = document.createElement('div');
+     const createImgContainer = document.createElement('div');
+     const createImg = document.createElement('img');
+     const newSpan = document.createElement('span');
+     
+     createCard.classList.add('card');
+     createHeadline.classList.add('headline');
+     createAuthor.classList.add('author');
+     createImgContainer.classList.add('img-container');
+
+axios
+     .get('https://lambda-times-backend.herokuapp.com/articles')
+
+     .then(Response => {
+         //console.log(Response);
+         /*console.log(Response.data.articles.bootstrap);
+         console.log(Response.data.articles.javascript);
+         console.log(Response.data.articles.node);
+         console.log(Response.data.articles.technology);
+         console.log(Response.data.articles.jquery);*/
+
+         createHeadline.textContent = Response.data.articles.bootstrap.headline;
+         newSpan.textContent = Response.data.articles.bootstrap.authorName;
+         createImg.src = Response.data.articles.bootstrap.authorPhoto;
+         
+         createCard.appendChild(createHeadline);
+         createCard.appendChild(createAuthor);
+         createAuthor.appendChild(createImgContainer);
+         createImgContainer.appendChild(createImg);
+         createAuthor.appendChild(newSpan);
+     })
+     .catch(error => {
+         console.log(error);
+     })
+
+     
