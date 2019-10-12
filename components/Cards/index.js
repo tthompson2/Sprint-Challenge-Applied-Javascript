@@ -59,9 +59,11 @@ axios
          return createCard;
     
 });
+cardContainer.appendChild(cardCreator());
+console.log(cardCreator());
+console.log(cardContainer);
          }
 
-         cardContainer.appendChild(cardCreator());
      })
      .catch(error => {
          console.log(error);
