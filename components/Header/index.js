@@ -28,8 +28,6 @@ function Header() {
     createDiv.appendChild(createH1);
     createDiv.appendChild(createSpan2);
 
-    console.log(createDiv);
-
     return createDiv;
 }
 

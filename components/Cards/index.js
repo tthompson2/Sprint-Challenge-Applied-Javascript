@@ -56,13 +56,18 @@ axios
          createImgContainer.appendChild(createImg);
          createAuthor.appendChild(newSpan);
 
+         console.log(createCard);
+
+         cardContainer.appendChild(createCard);
+
          return createCard;
     
 });
-cardContainer.appendChild(cardCreator());
-console.log(cardCreator());
-console.log(cardContainer);
+
          }
+         cardContainer.appendChild(cardCreator());
+         console.log(cardCreator());
+         console.log(cardContainer());
 
      })
      .catch(error => {
