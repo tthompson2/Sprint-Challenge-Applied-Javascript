@@ -24,16 +24,9 @@ axios
      .get('https://lambda-times-backend.herokuapp.com/articles')
 
      .then(Response => {
-         console.log(Response.data.articles.bootstrap);
-         console.log(Response.data.articles.javascript);
-         console.log(Response.data.articles.node);
-         console.log(Response.data.articles.technology);
-         console.log(Response.data.articles.jquery);
 
-         function cardCreator() {
+         function cardCreator(authorName, authorPhoto, headline) {
 
-         Response.data.articles.bootstrap.forEach(element => {
-         
          const createCard = document.createElement('div');
          const createHeadline = document.createElement('div');
          const createAuthor = document.createElement('div');
@@ -44,11 +37,11 @@ axios
          createCard.classList.add('card');
          createHeadline.classList.add('headline');
          createAuthor.classList.add('author');
-         createImgContainer.classList.add('img-container');   
+         createImgContainer.classList.add('img-container');
             
-         newSpan.textContent = element.authorName;
-         createImg.src = element.authorPhoto;
-         createHeadline.textContent = element.headline;
+         newSpan.textContent = authorName;
+         createImg.src = authorPhoto;
+         createHeadline.textContent = headline;
 
          createCard.appendChild(createHeadline);
          createCard.appendChild(createAuthor);
@@ -56,18 +49,40 @@ axios
          createImgContainer.appendChild(createImg);
          createAuthor.appendChild(newSpan);
 
-         console.log(createCard);
-
          cardContainer.appendChild(createCard);
 
          return createCard;
-    
-});
-
          }
-         cardContainer.appendChild(cardCreator());
-         console.log(cardCreator());
-         console.log(cardContainer());
+
+         Response.data.articles.jquery.forEach(element => {
+
+            cardCreator(element.authorName, element.authorPhoto, element.headline);
+             
+         });
+ 
+         Response.data.articles.technology.forEach(element => {
+
+            cardCreator(element.authorName, element.authorPhoto, element.headline);
+             
+         });
+
+         Response.data.articles.node.forEach(element => {
+
+            cardCreator(element.authorName, element.authorPhoto, element.headline);
+             
+         });
+
+         Response.data.articles.javascript.forEach(element => {
+
+            cardCreator(element.authorName, element.authorPhoto, element.headline);
+             
+         });
+
+         Response.data.articles.bootstrap.forEach(element => {
+
+            cardCreator(element.authorName, element.authorPhoto, element.headline);
+             
+         });
 
      })
      .catch(error => {
