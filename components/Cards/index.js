@@ -24,7 +24,7 @@ axios
      .get('https://lambda-times-backend.herokuapp.com/articles')
 
      .then(Response => {
-         
+
          function cardCreator(authorName, authorPhoto, headline) {
 
          const createCard = document.createElement('div');
@@ -72,8 +72,7 @@ axios
          
          Response.data.articles.technology.forEach(element => {
             cardCreator(element.authorName, element.authorPhoto, element.headline);
-         });
- 
+         }); 
 
      })
      .catch(error => {
