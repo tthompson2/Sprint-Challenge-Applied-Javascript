@@ -24,7 +24,7 @@ axios
      .get('https://lambda-times-backend.herokuapp.com/articles')
 
      .then(Response => {
-
+         
          function cardCreator(authorName, authorPhoto, headline) {
 
          const createCard = document.createElement('div');
@@ -54,35 +54,26 @@ axios
          return createCard;
          }
 
-         Response.data.articles.jquery.forEach(element => {
-
-            cardCreator(element.authorName, element.authorPhoto, element.headline);
-             
-         });
- 
-         Response.data.articles.technology.forEach(element => {
-
-            cardCreator(element.authorName, element.authorPhoto, element.headline);
-             
-         });
-
-         Response.data.articles.node.forEach(element => {
-
-            cardCreator(element.authorName, element.authorPhoto, element.headline);
-             
+         Response.data.articles.bootstrap.forEach(element => {
+            cardCreator(element.authorName, element.authorPhoto, element.headline);   
          });
 
          Response.data.articles.javascript.forEach(element => {
-
             cardCreator(element.authorName, element.authorPhoto, element.headline);
-             
          });
 
-         Response.data.articles.bootstrap.forEach(element => {
-
+         Response.data.articles.jquery.forEach(element => {
             cardCreator(element.authorName, element.authorPhoto, element.headline);
-             
          });
+         
+         Response.data.articles.node.forEach(element => {
+            cardCreator(element.authorName, element.authorPhoto, element.headline);
+         });
+         
+         Response.data.articles.technology.forEach(element => {
+            cardCreator(element.authorName, element.authorPhoto, element.headline);
+         });
+ 
 
      })
      .catch(error => {
